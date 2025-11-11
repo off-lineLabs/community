@@ -4,6 +4,7 @@ Thank you for your interest in contributing to Offline Labs! We're excited to ha
 
 ## Table of Contents
 
+- [Core Principles](#core-principles)
 - [Code of Conduct](#code-of-conduct)
 - [How Can I Contribute?](#how-can-i-contribute)
 - [Getting Started](#getting-started)
@@ -12,6 +13,98 @@ Thank you for your interest in contributing to Offline Labs! We're excited to ha
 - [Commit Guidelines](#commit-guidelines)
 - [Pull Request Process](#pull-request-process)
 - [Community](#community)
+
+## Core Principles
+
+**These principles are non-negotiable and form the foundation of everything we build at Offline Labs. All contributions must align with these values. Any malicious attempt to circumvent these principles will result in a complete ban from future collaborations.**
+
+### 1. 🔌 Offline First
+
+**Your apps should work when you need them most, even without internet connection.**
+
+We do not restrict integrating Offline Labs projects with online tools. The key is to avoid unnecessary integrations that lock users out of features that are perfectly accessible offline. Examples include apps that require account creation when most of their functions don't need to be tied to anything in the cloud.
+
+**Guidelines:**
+- Design features to work without an internet connection
+- Handle offline/online transitions gracefully
+- Cache data appropriately
+- Provide clear feedback about connection status
+- Never make online connectivity a requirement for core functionality that can work offline
+
+### 2. 🔒 Privacy by Design
+
+**We believe your data belongs to you. No tracking, no surveillance, no data collection.**
+
+Analytics and trackers may be useful for understanding project usage and focusing on what users value, but this obsession with data doesn't account for the cost of trust lost from users and the legal obligations it may carry. By completely abstaining from ANY form of tracking, we aim to create an intangible value for our brand: unrestricted trust.
+
+**Guidelines:**
+- Don't collect ANY data
+- No analytics, no trackers, no telemetry of any kind
+- Store data securely and locally only
+- Provide clear privacy controls
+- Default to the most private option
+- Be transparent about data usage (or lack thereof)
+- Never compromise user privacy for convenience or metrics
+
+### 3. 🧑‍💻👨🏾‍💻👩‍💻 Open Source
+
+**Transparency builds trust. All our code is open source and auditable.**
+
+To build trust, it's essential that our users can know what's happening in the projects we develop. Open source is non-negotiable. The GPL v3 license with restrictions (see license template) should always be prioritized.
+
+**Guidelines:**
+- Write readable, maintainable code
+- Document your work thoroughly
+- Use open source dependencies when possible
+- Avoid proprietary or restrictive licenses
+- All code must be auditable and transparent
+- Make it easy for users to verify what our software does
+
+### 4. 🎯 Focused Utility
+
+**No bloat, no ads, no unnecessary "smart" features. Just fast, efficient software that does what it is supposed to do.**
+
+The concept of Focused Utility means always keeping in mind that any feature in our projects must serve the project itself, not exist for its own sake. Incorporating a tool just because similar apps do it is not something that prioritizes the project's interest. Remember that any implementation in development has a cost: unpredictable effects, performance impact, conflicts with other packages/devices. This cost can never exceed the benefit it provides to the user.
+
+**Guidelines:**
+- Question whether a feature truly serves users or just adds complexity
+- Avoid feature creep and bloat
+- Prioritize performance and efficiency
+- Consider the maintenance cost of every addition
+- Say no to features that don't align with the project's core purpose
+- No ads, no dark patterns, no unnecessary "smart" features
+
+### 5. 🤝 Community
+
+**Built by the community, for the community. No corporate interests or profit motives.**
+
+Since we don't have trackers, our only way to understand what our community needs is by talking to them. The goal of our collective is not just to develop these projects but also to create a culture that values greater knowledge of what we consume digitally. In other words, to remove the alienation between user and product and build bridges between developers and those who benefit from the project. Fostering the community, not just among developers, is a pillar and objective of Offline Labs.
+
+**Guidelines:**
+- Engage actively with the community
+- Listen to user feedback and needs
+- Help educate users about the software they use
+- Build bridges between developers and users
+- Foster an inclusive, welcoming environment
+- Share knowledge and help others learn
+- Remember: we serve the community, not shareholders or advertisers
+
+### 6. 💪 User Empowerment
+
+**Full control, no unnecessary limits. Our apps let you customize and optimize your experience as you see fit.**
+
+We believe that by understanding the product, users don't need excessive guardrails. We should avoid artificially limiting any functionality in our projects just because we think users won't know what to do with it.
+
+**Guidelines:**
+- Give users full control over their experience
+- Don't artificially limit features "for their own good"
+- Provide customization and configuration options
+- Trust users to make their own decisions
+- Offer power user features without hiding them
+- Make advanced features discoverable but not overwhelming
+- Respect user agency and choice
+
+---
 
 ## Code of Conduct
 
@@ -35,8 +128,9 @@ There are many ways to contribute to Offline Labs:
 - Check if the enhancement has already been suggested
 - Use a clear and descriptive title
 - Provide a detailed description of the suggested enhancement
-- Explain why this enhancement would be useful
+- Explain why this enhancement would be useful and how it aligns with our core principles
 - List any similar features in other applications if applicable
+- Consider the cost vs. benefit (see Principle 4: Focused Utility)
 
 ### 📝 Documentation
 
@@ -44,12 +138,13 @@ There are many ways to contribute to Offline Labs:
 - Add missing documentation
 - Translate documentation
 - Create tutorials or examples
+- Help users understand and get the most from our software
 
 ### 💻 Code Contributions
 
 - Pick an issue labeled `good first issue` if you're new
 - Look for issues labeled `help wanted`
-- Propose new features or improvements
+- Propose new features or improvements (ensuring they align with our principles)
 - Fix bugs
 
 ### 🎨 Design Contributions
@@ -75,8 +170,8 @@ There are many ways to contribute to Offline Labs:
    ```bash
    git checkout -b fix/your-bug-fix
    ```
-4. **Make your changes** following our development guidelines
-5. **Test your changes** thoroughly
+4. **Make your changes** following our development guidelines and core principles
+5. **Test your changes** thoroughly (including offline functionality)
 6. **Commit your changes** with clear, descriptive messages
 7. **Push to your fork**:
    ```bash
@@ -86,28 +181,18 @@ There are many ways to contribute to Offline Labs:
 
 ## Development Guidelines
 
-### Our Core Principles
+### Alignment with Core Principles
 
-All contributions should align with our core principles:
+Before writing any code, ask yourself:
 
-#### 🔌 Offline First
-- Design features to work without an internet connection
-- Handle offline/online transitions gracefully
-- Cache data appropriately
-- Provide clear feedback about connection status
+1. **Does this work offline?** If not, is there a valid reason why not?
+2. **Does this respect privacy?** Am I sure I'm not collecting ANY data?
+3. **Is this transparent?** Can users audit and understand what this does?
+4. **Is this truly useful?** Does the benefit outweigh the cost and complexity?
+5. **Does this serve the community?** Am I building what users need, not what I think is cool?
+6. **Does this empower users?** Am I giving control, or taking it away?
 
-#### 🔒 Privacy by Design
-- Don't collect unnecessary data
-- Store sensitive data securely
-- Provide clear privacy controls
-- Default to the most private option
-- Be transparent about data usage
-
-#### 🌐 Open Source
-- Write readable, maintainable code
-- Document your work thoroughly
-- Use open source dependencies when possible
-- Avoid proprietary or restrictive licenses
+If you can't answer these questions confidently, reconsider your approach.
 
 ### General Guidelines
 
@@ -121,136 +206,64 @@ All contributions should align with our core principles:
 
 ## Coding Standards
 
-### Code Quality
-
-- Write clean, readable code
-- Follow the existing code style in the project
-- Use meaningful variable and function names
-- Keep functions small and focused
-- Avoid code duplication (DRY principle)
-- Comment complex logic
-
-### Documentation
-
-- Add docstrings/JSDoc comments to functions and classes
-- Update README if you change functionality
-- Document any new dependencies or setup steps
-- Include inline comments for complex algorithms
-
-### Testing
-
-- Write tests for new features
-- Ensure existing tests pass
-- Aim for good test coverage
-- Test edge cases and error conditions
-- Test offline functionality where applicable
-
-### Performance
-
-- Consider performance implications of your changes
-- Avoid unnecessary computations
-- Optimize for offline usage (minimize storage, optimize caching)
-- Profile code if making performance-critical changes
-
-### Security
-
-- Never commit secrets or API keys
-- Sanitize user input
-- Follow security best practices for the language/framework
-- Report security issues privately
+- **Clean code**: Follow existing style, use meaningful names, keep functions focused
+- **Documentation**: Add docstrings, update README, comment complex logic
+- **Testing**: Write tests for new features, ensure existing tests pass, **test offline functionality thoroughly**
+- **Performance**: Consider implications of changes, optimize for offline usage, remember every feature has a cost
+- **Security**: Never commit secrets, sanitize input, follow best practices, report issues privately
+- **Privacy**: No analytics, no tracking, no telemetry, no external data collection of any kind
 
 ## Commit Guidelines
 
-### Commit Messages
-
-Write clear, descriptive commit messages:
+Use clear, descriptive commit messages:
 
 ```
 type: Brief summary (50 characters or less)
 
-More detailed explanation if necessary. Wrap at 72 characters.
-Explain what and why, not how.
-
-- Bullet points are okay
-- Use present tense: "Add feature" not "Added feature"
-- Reference issues: "Fixes #123" or "Relates to #456"
+Optional detailed explanation. Reference issues with "Fixes #123".
 ```
 
-### Commit Types
+**Types**: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
 
-- `feat`: New feature
-- `fix`: Bug fix
-- `docs`: Documentation changes
-- `style`: Code style changes (formatting, missing semicolons, etc.)
-- `refactor`: Code refactoring without changing functionality
-- `test`: Adding or updating tests
-- `chore`: Maintenance tasks, dependency updates
-
-### Examples
-
+**Example**:
 ```
 feat: Add offline mode indicator to status bar
 
-Implements a visual indicator that shows connection status.
-Users can now see at a glance whether they're online or offline.
+Implements visual indicator showing connection status.
+All functionality remains available offline.
 
 Fixes #42
 ```
 
-```
-fix: Prevent data loss when going offline during sync
-
-Added proper error handling and retry logic for sync operations.
-Data is now queued and retried when connection is restored.
-
-Relates to #78
-```
-
 ## Pull Request Process
 
-1. **Ensure your code follows our guidelines**
-   - Code is well-documented
-   - Tests are passing
-   - Style guidelines are followed
+### Before Submitting
 
-2. **Update documentation**
-   - README if functionality changes
-   - Inline code comments
-   - Any relevant wiki or docs
+Ensure your PR:
+- Follows style guidelines and passes all tests
+- Includes updated documentation
+- Respects all 6 core principles
+- Works offline (if applicable)
+- Contains no tracking or data collection
 
-3. **Write a clear PR description**
-   - What does this PR do?
-   - Why is this change needed?
-   - How has it been tested?
-   - Screenshots for UI changes
+### PR Description
 
-4. **Link related issues**
-   - Use "Fixes #123" or "Closes #123" for issues this PR resolves
-   - Use "Relates to #456" for related issues
+Include:
+- What the PR does and why
+- How it aligns with our principles
+- How it was tested
+- Screenshots (for UI changes)
+- Related issues ("Fixes #123")
 
-5. **Be responsive**
-   - Address review comments promptly
-   - Ask questions if feedback is unclear
-   - Be open to suggestions
+### Checklist
 
-6. **Keep it focused**
-   - One feature or fix per PR
-   - Avoid mixing unrelated changes
-   - Keep PRs reasonably sized
-
-### PR Checklist
-
-Before submitting, ensure:
-
-- [ ] Code follows the project's style guidelines
-- [ ] Self-review of code completed
-- [ ] Code is well-commented, especially complex parts
-- [ ] Documentation has been updated
-- [ ] Changes generate no new warnings
-- [ ] Tests have been added/updated and pass
-- [ ] Offline functionality works as expected (if applicable)
-- [ ] Privacy implications have been considered
-- [ ] Dependent changes have been merged
+- [ ] Code follows project style and is well-commented
+- [ ] Documentation updated
+- [ ] Tests added/updated and passing
+- [ ] **Offline functionality verified**
+- [ ] **No tracking/analytics added**
+- [ ] Open source dependencies only
+- [ ] Feature serves the project purpose
 
 ## Community
 
@@ -260,37 +273,25 @@ Before submitting, ensure:
 - **Issues**: Report bugs or request features
 - **Documentation**: Check project docs and README files
 
-### Reviewing Pull Requests
-
-We welcome your reviews on others' PRs:
+### Reviewing PRs
 
 - Be constructive and respectful
-- Ask questions to understand the change
-- Suggest improvements clearly
-- Acknowledge good work
+- Consider alignment with core principles
 - Help others learn
 
 ### Staying Connected
 
-- Watch the repository for updates
 - Participate in discussions
-- Help answer questions from other contributors
-- Share your experience and learnings
+- Help answer questions
+- Share knowledge and experience
+- Help bridge developers and users
 
 ## Recognition
 
-We value all contributions! Contributors will be:
-
-- Listed in project documentation
-- Mentioned in release notes for significant contributions
-- Appreciated and recognized by the community
+Contributors are listed in project documentation, mentioned in release notes, and appreciated by the community.
 
 ## Questions?
 
-Don't hesitate to ask! We're here to help:
+Open an issue, start a discussion, or reach out to maintainers. We're here to help!
 
-- Open an issue with your question
-- Start a discussion
-- Reach out to maintainers
-
-Thank you for contributing to Offline Labs! Together, we're building a better, more private, and open future for everyone. 🚀
+Thank you for contributing to Offline Labs! Together, we're building a better, more private, and open future.
